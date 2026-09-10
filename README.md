@@ -72,7 +72,7 @@ The application contains four main sections:
 
 ![Data flow](data-flow.svg)
 
-The main entry point is [`app.py`](../app.py). It collects user inputs and
+The main entry point is [`app.py`](https://github.com/kshirod46/AgriScope-India/blob/main/app.py). It collects user inputs and
 connects the interface with the calculation, modelling, data and API modules.
 
 ---
@@ -81,7 +81,7 @@ connects the interface with the calculation, modelling, data and API modules.
 
 ### 3.1 Historical crop data
 
-The file [`data/odisha_crop_yield_state.csv`](../data/odisha_crop_yield_state.csv)
+The file [`data/odisha_crop_yield_state.csv`](https://github.com/kshirod46/AgriScope-India/blob/main/data/odisha_crop_yield_state.csv)
 contains historical crop observations for Odisha. It includes crop, crop year,
 yield, area, production, fertilizer, pesticide, annual rainfall and season
 fields. The data is used for exploratory analysis and model training.
@@ -89,16 +89,16 @@ fields. The data is used for exploratory analysis and model training.
 ### 3.2 Recent official yield data
 
 The file
-[`data/odisha_recent_official_yield.csv`](../data/odisha_recent_official_yield.csv)
+[`data/odisha_recent_official_yield.csv`](https://github.com/kshirod46/AgriScope-India/blob/main/data/odisha_recent_official_yield.csv)
 contains a recent official Odisha rice-yield value. It is displayed separately
 because it does not contain the fertilizer, rainfall and pesticide fields
 required by the regression model.
 
 ### 3.3 District and map data
 
-- [`data/odisha_districts.geojson`](../data/odisha_districts.geojson) provides
+- [`data/odisha_districts.geojson`](https://github.com/kshirod46/AgriScope-India/blob/main/data/odisha_districts.geojson) provides
   district boundaries for the map.
-- [`data/odisha_district_centroids.csv`](../data/odisha_district_centroids.csv)
+- [`data/odisha_district_centroids.csv`](https://github.com/kshirod46/AgriScope-India/blob/main/data/odisha_district_centroids.csv)
   provides district coordinates for weather requests.
 
 ### 3.4 Weather data
@@ -132,13 +132,13 @@ filters and formats these values; it does not recalculate the official prices.
 
 | File or folder | Purpose |
 |---|---|
-| [`app.py`](../app.py) | Streamlit interface, controls, charts, maps and tables |
-| [`src/cost_calculator.py`](../src/cost_calculator.py) | Fertilizer quantity and cost calculations |
-| [`src/fertilizer_reference.py`](../src/fertilizer_reference.py) | Crop recommendations, nutrient composition and prices |
-| [`src/yield_model.py`](../src/yield_model.py) | Feature preparation, model training and prediction |
-| [`src/live_data.py`](../src/live_data.py) | Weather and Agmarknet data connectors |
-| [`data/`](../data/) | CSV, GeoJSON and district coordinate files |
-| [`requirements.txt`](../requirements.txt) | Python package requirements |
+| [`app.py`](https://github.com/kshirod46/AgriScope-India/blob/main/app.py) | Streamlit interface, controls, charts, maps and tables |
+| [`src/cost_calculator.py`](https://github.com/kshirod46/AgriScope-India/blob/main/src/cost_calculator.py) | Fertilizer quantity and cost calculations |
+| [`src/fertilizer_reference.py`](https://github.com/kshirod46/AgriScope-India/blob/main/src/fertilizer_reference.py) | Crop recommendations, nutrient composition and prices |
+| [`src/yield_model.py`](https://github.com/kshirod46/AgriScope-India/blob/main/src/yield_model.py) | Feature preparation, model training and prediction |
+| [`src/live_data.py`](https://github.com/kshirod46/AgriScope-India/blob/main/src/live_data.py) | Weather and Agmarknet data connectors |
+| [`data/`](https://github.com/kshirod46/AgriScope-India/tree/main/data) | CSV, GeoJSON and district coordinate files |
+| [`requirements.txt`](https://github.com/kshirod46/AgriScope-India/blob/main/requirements.txt) | Python package requirements |
 
 ### 4.2 Fertilizer optimizer
 
