@@ -1,4 +1,4 @@
-# 🌾 AgriScope-IndiaAgriScope-India
+# 🌾 AgriScope-India
 ## Agricultural Decision-Support Dashboard
 [![Streamlit](https://img.shields.io/badge/Streamlit-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white)](https://agriscope-india-0.streamlit.app/)
 
