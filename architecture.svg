@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="610" viewBox="0 0 1100 610" role="img" aria-labelledby="title desc">
+  <title id="title">AgriScope-India architecture</title>
+  <desc id="desc">Streamlit user interface connected to application modules, local data, and public data services.</desc>
+  <defs>
+    <linearGradient id="head" x1="0" x2="1">
+      <stop offset="0" stop-color="#12372a"/>
+      <stop offset="1" stop-color="#d39b45"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#12372a" flood-opacity=".16"/>
+    </filter>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#3d6857"/>
+    </marker>
+  </defs>
+  <rect width="1100" height="610" rx="24" fill="#f7faf8"/>
+  <rect x="34" y="28" width="1032" height="86" rx="18" fill="url(#head)" filter="url(#shadow)"/>
+  <text x="550" y="67" text-anchor="middle" fill="white" font-family="Arial" font-size="28" font-weight="700">AgriScope-India</text>
+  <text x="550" y="93" text-anchor="middle" fill="#e7f4ec" font-family="Arial" font-size="15">Streamlit agricultural decision-support dashboard</text>
+  <rect x="355" y="154" width="390" height="82" rx="16" fill="#ffffff" stroke="#1d654b" stroke-width="2" filter="url(#shadow)"/>
+  <text x="550" y="187" text-anchor="middle" fill="#12372a" font-family="Arial" font-size="20" font-weight="700">app.py</text>
+  <text x="550" y="212" text-anchor="middle" fill="#607168" font-family="Arial" font-size="14">tabs, inputs, metrics, charts and maps</text>
+  <line x1="550" y1="236" x2="550" y2="284" stroke="#3d6857" stroke-width="3" marker-end="url(#arrow)"/>
+  <g filter="url(#shadow)">
+    <rect x="64" y="310" width="220" height="118" rx="16" fill="#ffffff" stroke="#d8e5dc"/>
+    <rect x="314" y="310" width="220" height="118" rx="16" fill="#ffffff" stroke="#d8e5dc"/>
+    <rect x="564" y="310" width="220" height="118" rx="16" fill="#ffffff" stroke="#d8e5dc"/>
+    <rect x="814" y="310" width="220" height="118" rx="16" fill="#ffffff" stroke="#d8e5dc"/>
+  </g>
+  <text x="174" y="345" text-anchor="middle" fill="#1c654b" font-family="Arial" font-size="17" font-weight="700">Fertilizer modules</text>
+  <text x="174" y="372" text-anchor="middle" fill="#607168" font-family="Arial" font-size="14">references + cost math</text>
+  <text x="174" y="396" text-anchor="middle" fill="#607168" font-family="Arial" font-size="13">DAP / Urea / MOP</text>
+  <text x="424" y="345" text-anchor="middle" fill="#1c654b" font-family="Arial" font-size="17" font-weight="700">yield_model.py</text>
+  <text x="424" y="372" text-anchor="middle" fill="#607168" font-family="Arial" font-size="14">features + Random Forest</text>
+  <text x="424" y="396" text-anchor="middle" fill="#607168" font-family="Arial" font-size="13">historical yield context</text>
+  <text x="674" y="345" text-anchor="middle" fill="#1c654b" font-family="Arial" font-size="17" font-weight="700">live_data.py</text>
+  <text x="674" y="372" text-anchor="middle" fill="#607168" font-family="Arial" font-size="14">weather + mandi connectors</text>
+  <text x="674" y="396" text-anchor="middle" fill="#607168" font-family="Arial" font-size="13">Open-Meteo / Agmarknet</text>
+  <text x="924" y="345" text-anchor="middle" fill="#1c654b" font-family="Arial" font-size="17" font-weight="700">data/</text>
+  <text x="924" y="372" text-anchor="middle" fill="#607168" font-family="Arial" font-size="14">CSV + GeoJSON</text>
+  <text x="924" y="396" text-anchor="middle" fill="#607168" font-family="Arial" font-size="13">crop, district, map data</text>
+  <path d="M550 284 L174 310" stroke="#3d6857" stroke-width="2" marker-end="url(#arrow)"/>
+  <path d="M550 284 L424 310" stroke="#3d6857" stroke-width="2" marker-end="url(#arrow)"/>
+  <path d="M550 284 L674 310" stroke="#3d6857" stroke-width="2" marker-end="url(#arrow)"/>
+  <path d="M550 284 L924 310" stroke="#3d6857" stroke-width="2" marker-end="url(#arrow)"/>
+  <rect x="155" y="486" width="790" height="76" rx="16" fill="#edf4ef" stroke="#c7ddd0"/>
+  <text x="550" y="518" text-anchor="middle" fill="#12372a" font-family="Arial" font-size="17" font-weight="700">User-facing outputs</text>
+  <text x="550" y="542" text-anchor="middle" fill="#607168" font-family="Arial" font-size="14">fertilizer plan · historical yield estimate · rainfall risk · official market prices</text>
+  <line x1="174" y1="428" x2="230" y2="486" stroke="#3d6857" stroke-width="2" marker-end="url(#arrow)"/>
+  <line x1="424" y1="428" x2="430" y2="486" stroke="#3d6857" stroke-width="2" marker-end="url(#arrow)"/>
+  <line x1="674" y1="428" x2="670" y2="486" stroke="#3d6857" stroke-width="2" marker-end="url(#arrow)"/>
+  <line x1="924" y1="428" x2="870" y2="486" stroke="#3d6857" stroke-width="2" marker-end="url(#arrow)"/>
+</svg>
