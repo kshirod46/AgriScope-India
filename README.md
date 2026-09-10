@@ -1,5 +1,10 @@
-# 🌾 AgriScope-India
-## Agricultural Decision-Support Dashboard
+
+![Header](assets/Header.png)
+
+
+---
+
+
 [![Streamlit](https://img.shields.io/badge/Streamlit-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white)](https://agriscope-india-0.streamlit.app/)
 
 ### Project Report
@@ -68,9 +73,9 @@ The application contains four main sections:
 | 📊 Exploratory Data Analysis | Presents historical crop and yield charts |
 | 📡 Live Mandi Prices | Displays official market prices by district and date |
 
-![System architecture](architecture.svg)
+![System architecture](assets/architecture.svg)
 
-![Data flow](data-flow.svg)
+![Data flow](assets/data-flow.svg)
 
 The main entry point is [`app.py`](https://github.com/kshirod46/AgriScope-India/blob/main/app.py). It collects user inputs and
 connects the interface with the calculation, modelling, data and API modules.
