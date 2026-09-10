@@ -1,4 +1,4 @@
-# 🌾 AgriScope-India
+# 🌾 AgriScope-IndiaAgriScope-India
 ## Agricultural Decision-Support Dashboard
 
 ### Project Report
