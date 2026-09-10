@@ -74,8 +74,9 @@ st.markdown("""
 </div>
 """, unsafe_allow_html=True)
 
-tab_fert, tab_map, tab_eda, tab_live = st.tabs(
-    ["🧪 Fertilizer Optimizer", "🗺️ District Map & Yield", "📊 EDA", "📡 Live Feed"]
+tab_fert, tab_map, tab_eda, tab_yield, tab_live = st.tabs(
+    ["🧪 Fertilizer Optimizer", "🗺️ District Map & Yield", "📊 EDA",
+     "🌾 Yield Prediction", "📡 Live Feed"]
 )
 
 # ═══════════════════════════════════════════════════════════════════════
@@ -501,7 +502,112 @@ with tab_eda:
     )
 
 # ═══════════════════════════════════════════════════════════════════════
-# TAB 4 — LIVE FEED
+# TAB 4 — YIELD PREDICTION
+# ═══════════════════════════════════════════════════════════════════════
+with tab_yield:
+    st.markdown(
+        '<div class="section-kicker">Model workspace</div><h2>🌾 Yield Prediction</h2>'
+        '<p class="section-note">Estimate crop yield from historical agricultural and rainfall conditions.</p>',
+        unsafe_allow_html=True,
+    )
+    st.info(
+        "This prediction is based on historical Odisha records. It is intended "
+        "for comparison and planning, not as a guaranteed field forecast."
+    )
+
+    prediction_crop = st.selectbox(
+        "Select crop",
+        options=list_crops(),
+        index=list_crops().index("Rice") if "Rice" in list_crops() else 0,
+        key="yield_prediction_crop",
+    )
+    prediction_history = crop_history(prediction_crop)
+    input_col1, input_col2, input_col3 = st.columns(3)
+    with input_col1:
+        prediction_fertilizer = st.number_input(
+            "Fertilizer intensity (kg/ha)",
+            min_value=0.0,
+            value=float(prediction_history["fert_per_ha"].median()),
+            step=1.0,
+            key="yield_prediction_fertilizer",
+        )
+    with input_col2:
+        prediction_rainfall = st.number_input(
+            "Annual rainfall (mm)",
+            min_value=0.0,
+            value=float(prediction_history["Annual_Rainfall"].median()),
+            step=10.0,
+            key="yield_prediction_rainfall",
+        )
+    with input_col3:
+        prediction_pesticide = st.number_input(
+            "Pesticide intensity (kg/ha)",
+            min_value=0.0,
+            value=float(prediction_history["pest_per_ha"].median()),
+            step=0.1,
+            key="yield_prediction_pesticide",
+        )
+
+    prediction = predict_yield(
+        prediction_crop,
+        prediction_fertilizer,
+        prediction_rainfall,
+        prediction_pesticide,
+    )
+    if prediction:
+        result_col1, result_col2, result_col3 = st.columns(3)
+        result_col1.metric("Predicted yield", f"{prediction['predicted_yield']} t/ha")
+        result_col2.metric("Historical fit (R²)", f"{prediction['r2_on_history']:.3f}")
+        result_col3.metric("Training records", f"{prediction['n_historical_rows']:,}")
+
+        st.subheader("Prediction compared with historical records")
+        historical_yields = prediction_history[["Crop_Year", "Yield"]].copy()
+        historical_yields["Type"] = "Historical yield"
+        predicted_point = pd.DataFrame({
+            "Crop_Year": [historical_yields["Crop_Year"].max() + 1],
+            "Yield": [prediction["predicted_yield"]],
+            "Type": ["Model estimate"],
+        })
+        comparison = pd.concat([historical_yields, predicted_point], ignore_index=True)
+        fig = px.line(
+            comparison,
+            x="Crop_Year",
+            y="Yield",
+            color="Type",
+            markers=True,
+            title=f"{prediction_crop}: historical yield and model estimate",
+            labels={"Crop_Year": "Crop year", "Yield": "Yield (t/ha)"},
+        )
+        st.plotly_chart(fig, use_container_width=True)
+
+        input_summary = pd.DataFrame({
+            "Model input": [
+                "Fertilizer intensity",
+                "Annual rainfall",
+                "Pesticide intensity",
+            ],
+            "Value": [
+                prediction_fertilizer,
+                prediction_rainfall,
+                prediction_pesticide,
+            ],
+            "Unit": ["kg/ha", "mm", "kg/ha"],
+        })
+        st.subheader("Inputs used for this estimate")
+        st.dataframe(input_summary, hide_index=True, use_container_width=True)
+        st.caption(
+            f"The {prediction_crop} model was trained on {prediction['n_historical_rows']} "
+            f"historical records. Its in-sample R² is {prediction['r2_on_history']:.3f}; "
+            "this value is not independent test accuracy."
+        )
+    else:
+        st.warning(
+            f"Not enough historical records are available to build a prediction "
+            f"for {prediction_crop}."
+        )
+
+# ═══════════════════════════════════════════════════════════════════════
+# TAB 5 — LIVE FEED
 # ═══════════════════════════════════════════════════════════════════════
 with tab_live:
     st.markdown('<div class="section-kicker">Market intelligence</div><h2>📡 Live Mandi Prices</h2>'
