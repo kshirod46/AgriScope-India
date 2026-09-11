@@ -1,12 +1,11 @@
 
 ![Header](assets/Header.png)
 
-
 ---
 
 
 [![Streamlit](https://img.shields.io/badge/Streamlit-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white)](https://agriscope-india-0.streamlit.app/)
-
+---
 ### Project Report
 
 **Technologies:** Python, Streamlit, Pandas, Scikit-learn, Plotly and REST APIs  
@@ -444,14 +443,8 @@ users can understand how each value is produced.
 ---
 
 ## References
-
-1. Agmarknet 2.0, Government of India.  
-   <https://agmarknet.gov.in/>
-2. Open-Meteo Weather API.  
-   <https://open-meteo.com/>
-3. Streamlit Documentation.  
-   <https://docs.streamlit.io/>
-4. Scikit-learn Documentation: Random Forest Regression.  
-   <https://scikit-learn.org/stable/modules/ensemble.html#random-forests>
-5. Plotly Python Documentation.  
-   <https://plotly.com/python/>
+1. [Agmarknet 2.0, Government of India](<https://agmarknet.gov.in/>)
+2. [Open-Meteo Weather API](<https://open-meteo.com/>)
+3. [Streamlit Documentation](<https://docs.streamlit.io/>)
+4. [Scikit-learn Documentation: Random Forest Regression](<https://scikit-learn.org/stable/modules/ensemble.html#random-forests>)
+5. [Plotly Python Documentation](<https://plotly.com/python/>)
