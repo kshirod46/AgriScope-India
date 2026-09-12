@@ -4,7 +4,7 @@
 ---
 
 
-[![Streamlit](https://img.shields.io/badge/Streamlit-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white)](https://agriscope-india-0.streamlit.app/)
+[![Streamlit](https://img.shields.io/badge/Streamlit-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white)](https://dynamic-fare-intelligence.streamlit.app/)
 ---
 ### Project Report
 
